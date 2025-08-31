@@ -1,0 +1,26 @@
+appId: com.twodoorsdev.kitters
+---
+# Test vertical scrolling functionality in MockList
+# Verifies that users can scroll through all 20 items in the list
+
+- launchApp
+- assertVisible: 'Home'
+
+- assertVisible:
+    text: '1'
+
+- scrollUntilVisible:
+    element:
+      text: '20'
+    direction: DOWN
+
+- assertVisible:
+    text: '20'
+
+- scrollUntilVisible:
+    element:
+      text: '1'
+    direction: UP
+
+- assertVisible:
+    text: '1'

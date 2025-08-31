@@ -42,7 +42,8 @@ const styles = StyleSheet.create((theme, rt) => ({
     height: theme.space.full,
   },
   list: {
-    paddingTop: rt.insets.top,
+    paddingTop: theme.space.$2,
+    // paddingTop: rt.insets.top,
     paddingBottom: rt.insets.bottom + 160,
     paddingHorizontal: theme.space.$2,
     rowGap: theme.space.$2,

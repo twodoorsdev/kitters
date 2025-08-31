@@ -1,0 +1,32 @@
+appId: com.twodoorsdev.kitters
+---
+# Test horizontal tab swiping functionality
+# Verifies that users can swipe between Home, Second, and Third tabs
+
+- launchApp
+- assertVisible: 'Home'
+- assertVisible:
+    text: '1'
+
+- swipe:
+    direction: LEFT
+- assertVisible: 'Second'
+- assertVisible:
+    text: '1'
+
+- swipe:
+    direction: LEFT
+- assertVisible: 'Third'
+- assertVisible:
+    text: '1'
+
+- swipe:
+    direction: RIGHT
+- assertVisible: 'Second'
+
+- swipe:
+    direction: RIGHT
+- assertVisible: 'Home'
+
+- assertVisible:
+    text: '1'
