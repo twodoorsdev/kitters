@@ -1,0 +1,9 @@
+appId: com.twodoorsdev.kitters
+---
+# Maestro configuration for Kitters app testing
+# This config file defines basic settings for running Maestro tests
+
+# Optional: Define flow execution order
+# flows:
+#   - test-tab-navigation.yaml
+#   - test-vertical-scroll.yaml

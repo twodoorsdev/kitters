@@ -1,24 +1,23 @@
-import { useCallback, useState } from 'react';
-import { View } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
-import { match, P } from 'ts-pattern';
-import { ActivityIndicator } from '../components/ActivityIndicator';
-
-import { UploadButton } from '../components/UploadButton';
-import { CatCardSkeleton } from '../features/CatCard/CatCardSkeleton';
-import { ImageList } from '../features/HomePage/ImageList';
-import { ImageListWrapper } from '../features/HomePage/ImageListWrapper';
-import { NoImagesFound } from '../features/HomePage/NoImagesFound';
-import { UploadImageSheet } from '../features/UploadImageModal/UploadImageSheet';
-import { useAppSelector } from '../store/overrides';
-import { getIsImageUploading } from '../store/selectors/getIsImageUploading';
 import {
   useGetMyFavouritesQuery,
   useGetMyImagesQuery,
   useGetMyVotesQuery,
-} from '../store/services/CatApi';
+} from '@/src/store/services/CatApi';
+import { useAppSelector } from '@/src/store/overrides';
+import { getIsImageUploading } from '@/src/store/selectors/getIsImageUploading';
+import { StyleSheet } from 'react-native-unistyles';
+import { useCallback, useState } from 'react';
+import { ActivityIndicator } from '@/src/components/ActivityIndicator';
+import { UploadImageSheet } from '@/src/features/UploadImageModal/UploadImageSheet';
+import { match, P } from 'ts-pattern';
+import { NoImagesFound } from '@/src/features/HomePage/NoImagesFound';
+import { ImageListWrapper } from '@/src/features/HomePage/ImageListWrapper';
+import { CatCardSkeleton } from '@/src/features/CatCard/CatCardSkeleton';
+import { ImageList } from '@/src/features/HomePage/ImageList';
+import { UploadButton } from '@/src/components/UploadButton';
+import { View } from 'react-native';
 
-const Home = () => {
+export const DiscoverFeed = () => {
   const { data: images = [], isLoading: isImagesLoading } = useGetMyImagesQuery(
     {},
   );
@@ -112,5 +111,3 @@ const styles = StyleSheet.create((theme, runtime) => ({
     bottom: runtime.insets.bottom,
   },
 }));
-
-export default Home;

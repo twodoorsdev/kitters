@@ -1,32 +1,52 @@
-import { Stack } from 'expo-router/stack';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import Toast from 'react-native-toast-message';
 import { StyleSheet } from 'react-native-unistyles';
 import { Provider } from 'react-redux';
-// import { CustomToast } from '../components/CustomToast';
 import { store } from '../store/store';
-import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-
-// const toastConfig = {
-//   success: CustomToast,
-//   error: CustomToast,
-// };
+import { Tabs } from '../components/TopTabNavigator';
 
 const NavigationLayout = () => {
   return (
-    <Slot />
-    // <Stack>
-    //   <Stack.Screen
-    //     name="index"
-    //     options={{ headerStyle: styles.header, title: 'KitSky' }}
-    //   />
-    // </Stack>
+    <Tabs style={styles.root}>
+      <Tabs.Screen
+        name="(home)/index"
+        options={{ title: 'Discover' }}
+      />
+      <Tabs.Screen
+        name="(home)/from-follows"
+        options={{ title: 'From follows' }}
+      />
+      <Tabs.Screen
+        name="(home)/profile"
+        options={{ title: 'Profile' }}
+      />
+    </Tabs>
   );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, runtime) => ({
   header: { backgroundColor: theme.colors.background.$3 },
+  root: {
+    paddingTop: runtime.insets.top,
+  },
+  tabList: {
+    display: 'flex',
+    position: 'absolute',
+    bottom: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'red',
+    padding: 8,
+    width: '100%',
+  },
+  tabTrigger: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 }));
 
 const ProviderLayout = () => {

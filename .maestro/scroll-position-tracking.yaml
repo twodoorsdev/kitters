@@ -1,0 +1,64 @@
+appId: com.twodoorsdev.kitters
+---
+# Test scroll position tracking and persistence across tab switches
+# Verifies that each tab maintains its own independent scroll position
+
+- launchApp
+- assertVisible: 'Home'
+- assertVisible:
+    text: '1'
+
+# Scroll down in Home tab to item 10
+- scrollUntilVisible:
+    element:
+      text: '10'
+    direction: DOWN
+
+- assertVisible:
+    text: '10'
+
+# Switch to Second tab
+- swipe:
+    direction: LEFT
+- assertVisible: 'Second'
+- assertVisible:
+    text: '1' # Should start at top since it's unvisited
+
+# Scroll down in Second tab to item 15
+- scrollUntilVisible:
+    element:
+      text: '15'
+    direction: DOWN
+
+- assertVisible:
+    text: '15'
+
+# Switch back to Home tab - should remember scroll position
+- swipe:
+    direction: RIGHT
+- assertVisible: 'Home'
+- assertVisible:
+    text: '10' # Should still be visible from previous scroll
+
+# Switch to Third tab - should start at top
+- swipe:
+    direction: LEFT
+- swipe:
+    direction: LEFT
+- assertVisible: 'Third'
+- assertVisible:
+    text: '1' # Should start at top since it's unvisited
+
+# Switch back to Second tab - should remember its scroll position
+- swipe:
+    direction: RIGHT
+- assertVisible: 'Second'
+- assertVisible:
+    text: '15' # Should still be visible from previous scroll
+
+# Final verification - return to Home
+- swipe:
+    direction: RIGHT
+- assertVisible: 'Home'
+- assertVisible:
+    text: '10' # Should still maintain its position
