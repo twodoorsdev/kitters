@@ -22,7 +22,7 @@
       "package": "com.twodoorsdev.kitsky"
     },
     "web": {
-      "output": "static",
+      "output": "server",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
