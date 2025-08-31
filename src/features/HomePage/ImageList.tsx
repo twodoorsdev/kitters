@@ -26,12 +26,15 @@ export const ImageList = () => {
   );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   root: {
     width: theme.space.full,
     height: theme.space.full,
   },
   list: {
+    paddingTop: rt.insets.top,
+    paddingBottom: rt.insets.bottom + 160,
+    paddingHorizontal: theme.space.$2,
     rowGap: theme.space.$2,
   },
 }));

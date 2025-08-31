@@ -98,7 +98,7 @@ const Home = () => {
 const styles = StyleSheet.create((theme, runtime) => ({
   container: {
     flex: 1,
-    padding: theme.space.$2,
+    // padding: theme.space.$2,
     backgroundColor: theme.colors.background.$5,
   },
   overlay: {

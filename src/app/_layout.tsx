@@ -5,6 +5,8 @@ import { StyleSheet } from 'react-native-unistyles';
 import { Provider } from 'react-redux';
 // import { CustomToast } from '../components/CustomToast';
 import { store } from '../store/store';
+import { Slot } from "expo-router";
+import {StatusBar} from "expo-status-bar";
 
 // const toastConfig = {
 //   success: CustomToast,
@@ -13,12 +15,13 @@ import { store } from '../store/store';
 
 const NavigationLayout = () => {
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{ headerStyle: styles.header, title: 'KitSky' }}
-      />
-    </Stack>
+    <Slot />
+    // <Stack>
+    //   <Stack.Screen
+    //     name="index"
+    //     options={{ headerStyle: styles.header, title: 'KitSky' }}
+    //   />
+    // </Stack>
   );
 };
 
@@ -29,6 +32,7 @@ const styles = StyleSheet.create((theme) => ({
 const ProviderLayout = () => {
   return (
     <GestureHandlerRootView>
+      <StatusBar hidden />
       <Provider store={store}>
         <NavigationLayout />
         {/*<Toast config={toastConfig} />*/}
