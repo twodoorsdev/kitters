@@ -1,0 +1,16 @@
+appId: com.twodoorsdev.kitters
+---
+# Test deeplink navigation functionality
+# Verifies that direct navigation to any screen works via deeplinks
+
+- launchApp
+- assertVisible: 'Home'
+
+- openLink: 'kitters://second'
+- assertVisible: 'Second'
+
+- openLink: 'kitters://third'
+- assertVisible: 'Third'
+
+- openLink: 'kitters:///'
+- assertVisible: 'Home'
