@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "Kitsky",
-    "slug": "kitsky",
+    "name": "Kitters",
+    "slug": "kitters",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "kitsky",
+    "scheme": "kitters",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.twodoorsdev.kitsky"
+      "bundleIdentifier": "com.twodoorsdev.kitters"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +19,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.twodoorsdev.kitsky"
+      "package": "com.twodoorsdev.kitters"
     },
     "web": {
       "output": "server",
