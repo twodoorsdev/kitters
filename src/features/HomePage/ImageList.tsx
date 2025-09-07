@@ -3,11 +3,22 @@ import Animated, { LinearTransition } from 'react-native-reanimated';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { CatCard } from '../CatCard/CatCard';
-import { useAppSelector } from '../../store/overrides';
-import { getEnhancedImageList } from '../../store/selectors/getEnhancedImageList';
+import { useGetMyImagesQuery, useGetMyFavouritesQuery, useGetMyVotesQuery } from '../../services/CatApi';
+import { useMemo } from 'react';
 
 export const ImageList = () => {
-  const memoizedImages = useAppSelector(getEnhancedImageList);
+  const { data: images = [] } = useGetMyImagesQuery();
+  const { data: favourites = [] } = useGetMyFavouritesQuery();
+  const { data: votes = [] } = useGetMyVotesQuery();
+
+  const memoizedImages = useMemo(() => 
+    images.map((image) => ({
+      ...image,
+      favourite: favourites.find((fav) => fav.image_id === image.id),
+      votes: votes.filter((vote) => vote.image_id === image.id),
+    })),
+    [images, favourites, votes]
+  );
 
   return (
     <View style={styles.root}>

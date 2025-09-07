@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 import { Alert } from 'react-native';
 import { IconButton } from '../../components/IconButton';
-import { useDeleteImageMutation } from '../../store/services/CatApi';
+import { useDeleteImageMutation } from '../../services/CatApi';
 import { CardProps } from './shared';
 
 export const DeleteButton = ({ item }: CardProps) => {
-  const [deleteMutationFn, { isLoading }] = useDeleteImageMutation();
+  const { mutate: deleteMutationFn, isPending: isLoading } =
+    useDeleteImageMutation();
 
   const handleDelete = useCallback(() => {
     Alert.alert('Delete', 'Are you sure you want to delete this image?', [

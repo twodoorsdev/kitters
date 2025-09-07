@@ -4,21 +4,28 @@ import { CardActions } from './CardActions';
 import { ImageOverlay } from './ImageOverlay';
 import { CardProps } from './shared';
 import { Image } from '../../components/Image';
+import { Link } from 'expo-router';
 
 export const CatCard = ({ item }: CardProps) => {
   return (
-    <View
-      style={styles.root}
-      testID={`Card.${item.id}`}
+    <Link
+      asChild
+      href="/"
+      // href={`/posts/${item.id}`}
     >
-      <Image
-        style={styles.image}
-        source={item.url}
-      />
-      <ImageOverlay item={item} />
+      <View
+        style={styles.root}
+        testID={`Card.${item.id}`}
+      >
+        <Image
+          style={styles.image}
+          source={item.url}
+        />
+        <ImageOverlay item={item} />
 
-      <CardActions item={item} />
-    </View>
+        <CardActions item={item} />
+      </View>
+    </Link>
   );
 };
 

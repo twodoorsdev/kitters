@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { IconButton } from '../../components/IconButton';
-import { useUpvoteImageMutation } from '../../store/services/CatApi';
+import { useUpvoteImageMutation } from '../../services/CatApi';
 import { CardProps } from './shared';
 
 export const UpvoteButton = ({ item }: CardProps) => {
-  const [upvoteMutationFn, { isLoading }] = useUpvoteImageMutation();
+  const { mutate: upvoteMutationFn, isPending: isLoading } = useUpvoteImageMutation();
 
   const handlePress = useCallback(() => {
     upvoteMutationFn(item.id);

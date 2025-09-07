@@ -1,10 +1,8 @@
 import { ImagePickerAsset } from 'expo-image-picker';
 import { useCallback } from 'react';
 import { ImageSource } from '../../components/ImageSource';
-import { useAppDispatch } from '../../store/overrides';
-import { useUploadImageMutation } from '../../store/services/CatApi';
-import { launchNativeCamera } from '../../store/thunks/launchNativeCamera';
-import { launchNativePhotoPicker } from '../../store/thunks/launchNativePhotoPicker';
+import { useUploadImageMutation } from '../../services/CatApi';
+import { launchCamera, launchPhotoPicker } from '../../utils/imagePicker';
 
 export type InteractiveImageSourceProps = {
   source: 'camera' | 'library';
@@ -20,16 +18,14 @@ export const ImageSourceButton = ({
   onImageSelect,
   onComplete,
 }: InteractiveImageSourceProps) => {
-  const dispatch = useAppDispatch();
-  const [uploadImageFn, { isLoading }] = useUploadImageMutation();
+  const { mutateAsync: uploadImageFn, isPending: isLoading } = useUploadImageMutation();
 
-  const thunk =
-    source === 'camera' ? launchNativeCamera : launchNativePhotoPicker;
+  const launchFn = source === 'camera' ? launchCamera : launchPhotoPicker;
 
   const icon = source === 'camera' ? 'camera' : 'images';
 
   const handleSelectAndUpload = useCallback(async () => {
-    const response = await dispatch(thunk()).unwrap();
+    const response = await launchFn();
 
     // The user cancelled the picker
     if (response.assets === null) {
@@ -52,11 +48,11 @@ export const ImageSourceButton = ({
       onImageSelect(firstImage);
     }
 
-    await uploadImageFn(firstImage).unwrap();
+    await uploadImageFn(firstImage);
     if (onComplete) {
       onComplete();
     }
-  }, [dispatch, onComplete, onImageSelect, thunk, uploadImageFn]);
+  }, [onComplete, onImageSelect, launchFn, uploadImageFn]);
 
   const displaySource = upperCaseFirstLetter(source);
 

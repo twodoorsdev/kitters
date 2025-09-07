@@ -10,13 +10,12 @@ import { ImageList } from '../features/HomePage/ImageList';
 import { ImageListWrapper } from '../features/HomePage/ImageListWrapper';
 import { NoImagesFound } from '../features/HomePage/NoImagesFound';
 import { UploadImageSheet } from '../features/UploadImageModal/UploadImageSheet';
-import { useAppSelector } from '../store/overrides';
-import { getIsImageUploading } from '../store/selectors/getIsImageUploading';
 import {
   useGetMyFavouritesQuery,
   useGetMyImagesQuery,
   useGetMyVotesQuery,
-} from '../store/services/CatApi';
+  useUploadImageMutation,
+} from '../services/CatApi';
 
 const Home = () => {
   const { data: images = [], isLoading: isImagesLoading } = useGetMyImagesQuery(
@@ -24,7 +23,7 @@ const Home = () => {
   );
   const { isLoading: isFavouritesLoading } = useGetMyFavouritesQuery();
   const { isLoading: isVotesLoading } = useGetMyVotesQuery();
-  const isImageUploading = useAppSelector(getIsImageUploading);
+  const { isPending: isImageUploading } = useUploadImageMutation();
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
 
   const handleUploadButtonPress = useCallback(() => {

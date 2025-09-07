@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { IconButton } from '../../components/IconButton';
-import { useDownvoteImageMutation } from '../../store/services/CatApi';
+import { useDownvoteImageMutation } from '../../services/CatApi';
 import { CardProps } from './shared';
 
 export const DownvoteButton = ({ item }: CardProps) => {
-  const [downvoteMutationFn, { isLoading }] = useDownvoteImageMutation();
+  const { mutate: downvoteMutationFn, isPending: isLoading } = useDownvoteImageMutation();
 
   const handlePress = useCallback(() => {
     downvoteMutationFn(item.id);
