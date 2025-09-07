@@ -18,5 +18,5 @@ export const requestCameraPermission = createAppAsyncThunk(
     }
 
     return updatedState;
-  }
+  },
 );

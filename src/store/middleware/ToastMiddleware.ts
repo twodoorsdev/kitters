@@ -22,7 +22,7 @@ startAppListening({
       showToast({
         title: `🩻 ${TITLE_SUCCESS}`,
         message: 'Image uploaded successfully',
-      })
+      }),
     );
   },
 });
@@ -37,7 +37,7 @@ startAppListening({
           'There was an error while uploading your image',
           action.error.message,
         ].join('\n'),
-      })
+      }),
     );
   },
 });
@@ -49,7 +49,7 @@ startAppListening({
       showToast({
         title: `🩻 ${TITLE_SUCCESS}`,
         message: 'Image deleted successfully',
-      })
+      }),
     );
   },
 });
@@ -64,7 +64,7 @@ startAppListening({
           'There was an error while deleting your image',
           action.error.message,
         ].join('\n'),
-      })
+      }),
     );
   },
 });
@@ -91,7 +91,7 @@ startAppListening({
           'There was an error while sending your upvote',
           action.error.message,
         ].join('\n'),
-      })
+      }),
     );
   },
 });
@@ -118,7 +118,7 @@ startAppListening({
           'There was an error while sending your downvote',
           action.error.message,
         ].join('\n'),
-      })
+      }),
     );
   },
 });
@@ -145,7 +145,7 @@ startAppListening({
           'There was an error while favouriting the image',
           action.error.message,
         ].join('\n'),
-      })
+      }),
     );
   },
 });
@@ -172,7 +172,7 @@ startAppListening({
           'There was an error while unfavouriting the image',
           action.error.message,
         ].join('\n'),
-      })
+      }),
     );
   },
 });

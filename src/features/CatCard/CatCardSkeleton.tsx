@@ -13,8 +13,6 @@ import Animated, {
 } from 'react-native-reanimated';
 
 export const CatCardSkeleton = () => {
-
-
   const sharedValue = useSharedValue(0.6);
 
   useEffect(() => {
@@ -22,9 +20,9 @@ export const CatCardSkeleton = () => {
     sharedValue.value = withRepeat(
       withSequence(
         withTiming(1, { duration: 1000 }),
-        withTiming(0.6, { duration: 1000 })
+        withTiming(0.6, { duration: 1000 }),
       ),
-      0
+      0,
     );
   }, [sharedValue]);
 
@@ -61,9 +59,21 @@ export const CatCardSkeleton = () => {
         />
       </Animated.View>
       <Animated.View style={[styles.base, dotStyle2]}>
-        <FontAwesome name={'circle'} color={'#c9c8c8'} size={40} />
-        <FontAwesome name={'circle'} color={'#c9c8c8'} size={40} />
-        <FontAwesome name={'circle'} color={'#c9c8c8'} size={40} />
+        <FontAwesome
+          name={'circle'}
+          color={'#c9c8c8'}
+          size={40}
+        />
+        <FontAwesome
+          name={'circle'}
+          color={'#c9c8c8'}
+          size={40}
+        />
+        <FontAwesome
+          name={'circle'}
+          color={'#c9c8c8'}
+          size={40}
+        />
       </Animated.View>
     </Animated.View>
   );

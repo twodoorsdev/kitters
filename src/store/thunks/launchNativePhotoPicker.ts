@@ -14,5 +14,5 @@ export const launchNativePhotoPicker = createAppAsyncThunk(
       // aspect: [4, 3],/
       // quality: 1,
     });
-  }
+  },
 );

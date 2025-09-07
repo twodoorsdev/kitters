@@ -2,7 +2,8 @@ import { ComponentProps } from 'react';
 import { ActivityIndicator as RNActivityIndicator, View } from 'react-native';
 import {
   StyleSheet,
-  UnistylesVariants, useUnistyles,
+  UnistylesVariants,
+  useUnistyles,
 } from 'react-native-unistyles';
 
 export type ActivityIndicatorProps = ComponentProps<
@@ -14,13 +15,16 @@ export const ActivityIndicator = ({
   expand = false,
   size = 'large',
 }: ActivityIndicatorProps) => {
-  const { theme } = useUnistyles()
+  const { theme } = useUnistyles();
   styles.useVariants({
     expand,
-  })
+  });
   return (
     <View style={styles.root}>
-      <RNActivityIndicator size={size} color={theme.colors.typography.$5} />
+      <RNActivityIndicator
+        size={size}
+        color={theme.colors.typography.$5}
+      />
     </View>
   );
 };

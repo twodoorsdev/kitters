@@ -7,7 +7,6 @@ import { useAppSelector } from '../../store/overrides';
 import { getEnhancedImageList } from '../../store/selectors/getEnhancedImageList';
 
 export const ImageList = () => {
-
   const memoizedImages = useAppSelector(getEnhancedImageList);
 
   return (

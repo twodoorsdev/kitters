@@ -9,9 +9,15 @@ export type UploadButtonProps = ComponentProps<typeof Pressable>;
 
 export const UploadButton = ({ style, ...props }: UploadButtonProps) => {
   return (
-    <Pressable style={[styles.root, style as StyleProp<ViewStyle>]} {...props}>
+    <Pressable
+      style={[styles.root, style as StyleProp<ViewStyle>]}
+      {...props}
+    >
       {/* Don't animate in test mode because it causes Detox to hang */}
-      <CatButton animated={!isTestMode} onPress={props.onPress} />
+      <CatButton
+        animated={!isTestMode}
+        onPress={props.onPress}
+      />
     </Pressable>
   );
 };

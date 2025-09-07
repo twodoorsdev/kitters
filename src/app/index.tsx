@@ -20,7 +20,7 @@ import {
 
 const Home = () => {
   const { data: images = [], isLoading: isImagesLoading } = useGetMyImagesQuery(
-    {}
+    {},
   );
   const { isLoading: isFavouritesLoading } = useGetMyFavouritesQuery();
   const { isLoading: isVotesLoading } = useGetMyVotesQuery();
@@ -40,7 +40,10 @@ const Home = () => {
     <View style={styles.container}>
       {match({ isLoading, isImageUploading, images })
         .with({ isLoading: true, images: P.any }, () => (
-          <ActivityIndicator expand size="large" />
+          <ActivityIndicator
+            expand
+            size="large"
+          />
         ))
         .with({ isLoading: false, isImageUploading: false, images: [] }, () => (
           <NoImagesFound />
@@ -56,7 +59,7 @@ const Home = () => {
               <CatCardSkeleton />
               <ImageList />
             </ImageListWrapper>
-          )
+          ),
         )
         .with(
           {
@@ -68,7 +71,7 @@ const Home = () => {
             <ImageListWrapper>
               <ImageList />
             </ImageListWrapper>
-          )
+          ),
         )
         .with(
           {
@@ -81,7 +84,7 @@ const Home = () => {
               <CatCardSkeleton />
               <ImageList />
             </ImageListWrapper>
-          )
+          ),
         )
         .exhaustive()}
       <View style={styles.overlay}>

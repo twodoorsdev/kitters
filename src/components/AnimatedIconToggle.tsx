@@ -7,9 +7,7 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import {
-  runOnJS
-} from 'react-native-worklets';
+import { runOnJS } from 'react-native-worklets';
 import { StyleSheet } from 'react-native-unistyles';
 import { Octicons } from '@expo/vector-icons';
 import { ComponentProps, useEffect, useMemo, useState } from 'react';
@@ -56,7 +54,7 @@ export const AnimatedIconToggle = ({
     'worklet';
     anim.value = withSequence(
       withTiming(0, configIn),
-      withTiming(1, configOut)
+      withTiming(1, configOut),
     );
   }, [anim, configIn, configOut, toggled]);
 
@@ -76,7 +74,11 @@ export const AnimatedIconToggle = ({
 
   return (
     <Animated.View style={[styles.root, iconStyles]}>
-      <Octicons name={currentIcon} size={24} color={currentColor} />
+      <Octicons
+        name={currentIcon}
+        size={24}
+        color={currentColor}
+      />
     </Animated.View>
   );
 };

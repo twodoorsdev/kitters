@@ -10,5 +10,5 @@ export const showToast = createAppAsyncThunk(
   'app/showToast',
   async ({ title, message }: ShowToastOptions) => {
     console.log({ title, message });
-  }
+  },
 );

@@ -5,7 +5,12 @@ import { StyleSheet } from 'react-native-unistyles';
 export type TextProps = ComponentProps<typeof RNText>;
 
 export const Text = ({ style, ...props }: TextProps) => {
-  return <RNText style={[styles.root, style]} {...props} />;
+  return (
+    <RNText
+      style={[styles.root, style]}
+      {...props}
+    />
+  );
 };
 
 const styles = StyleSheet.create((theme) => ({

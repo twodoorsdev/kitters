@@ -15,19 +15,19 @@ export const ImageActivitySlice = createSlice({
         CatApi.endpoints.uploadImage.matchPending,
         (state, { payload }) => {
           state.isImageUploading = true;
-        }
+        },
       )
       .addMatcher(
         CatApi.endpoints.uploadImage.matchFulfilled,
         (state, { payload }) => {
           state.isImageUploading = false;
-        }
+        },
       )
       .addMatcher(
         CatApi.endpoints.uploadImage.matchRejected,
         (state, { payload }) => {
           state.isImageUploading = false;
-        }
+        },
       );
   },
 });

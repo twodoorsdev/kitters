@@ -31,7 +31,7 @@ export async function proxyCatApiRequest(
     method?: string;
     body?: any;
     headers?: HeadersInit;
-  } = {}
+  } = {},
 ): Promise<Response> {
   const { method = 'GET', body, headers: customHeaders = {} } = options;
 
@@ -54,14 +54,16 @@ export async function proxyCatApiRequest(
   return response;
 }
 
-export function createErrorResponse(message: string, status: number = 500): Response {
-  return Response.json(
-    { error: message },
-    { status }
-  );
+export function createErrorResponse(
+  message: string,
+  status: number = 500,
+): Response {
+  return Response.json({ error: message }, { status });
 }
 
-export async function handleCatApiResponse(response: Response): Promise<Response> {
+export async function handleCatApiResponse(
+  response: Response,
+): Promise<Response> {
   if (!response.ok) {
     let errorMessage = `Cat API error: ${response.status} ${response.statusText}`;
 

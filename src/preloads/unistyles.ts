@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native-unistyles'
+import { StyleSheet } from 'react-native-unistyles';
 
 import { breakpoints } from '../theme/breakpoints';
 import * as themes from '../theme/themes';

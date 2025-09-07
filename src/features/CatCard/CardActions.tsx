@@ -24,10 +24,16 @@ export const CardActions = ({ item }: CardProps) => {
     <View style={styles.root}>
       <View style={styles.inner}>
         <UpvoteButton item={item} />
-        <Text testID={`Card.ScorePrefix.${item.id}`} style={styles.voteCount}>
+        <Text
+          testID={`Card.ScorePrefix.${item.id}`}
+          style={styles.voteCount}
+        >
           {prefix}
         </Text>
-        <Text testID={`Card.Score.${item.id}`} style={styles.voteCount}>
+        <Text
+          testID={`Card.Score.${item.id}`}
+          style={styles.voteCount}
+        >
           {score}
         </Text>
         <DownvoteButton item={item} />

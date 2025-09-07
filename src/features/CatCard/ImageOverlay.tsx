@@ -5,8 +5,6 @@ import { FavouriteButton } from './FavouriteButton';
 import { CardProps } from './shared';
 
 export const ImageOverlay = ({ item }: CardProps) => {
-
-
   return (
     <View style={styles.root}>
       <FavouriteButton item={item} />

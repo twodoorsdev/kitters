@@ -5,7 +5,7 @@ import { useUnistyles } from 'react-native-unistyles';
 export const CustomToast = () => {
   const { theme } = useUnistyles();
 
-  return null
+  return null;
 
   // return (
   //   <BaseToast

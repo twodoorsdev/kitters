@@ -7,8 +7,14 @@ import { Image } from '../../components/Image';
 
 export const CatCard = ({ item }: CardProps) => {
   return (
-    <View style={styles.root} testID={`Card.${item.id}`}>
-      <Image style={styles.image} source={item.url} />
+    <View
+      style={styles.root}
+      testID={`Card.${item.id}`}
+    >
+      <Image
+        style={styles.image}
+        source={item.url}
+      />
       <ImageOverlay item={item} />
 
       <CardActions item={item} />

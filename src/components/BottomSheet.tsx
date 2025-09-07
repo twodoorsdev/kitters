@@ -17,7 +17,6 @@ export const BottomSheet = ({
   open = false,
   ...props
 }: BottomSheetProps) => {
-
   const sheetRef = useRef<RNBottomSheet>(null);
 
   useEffect(() => {

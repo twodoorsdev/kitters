@@ -8,12 +8,21 @@ import { ImageSourceButton } from './ImageSourceButton';
 export type UploadImageSheetProps = ComponentProps<typeof BottomSheet>;
 
 export const UploadImageSheet = ({ open, onClose }: UploadImageSheetProps) => {
-
   return (
-    <BottomSheet style={styles.root} open={open} onClose={onClose}>
+    <BottomSheet
+      style={styles.root}
+      open={open}
+      onClose={onClose}
+    >
       <View style={styles.inner}>
-        <ImageSourceButton source="camera" onImageSelect={onClose} />
-        <ImageSourceButton source="library" onImageSelect={onClose} />
+        <ImageSourceButton
+          source="camera"
+          onImageSelect={onClose}
+        />
+        <ImageSourceButton
+          source="library"
+          onImageSelect={onClose}
+        />
       </View>
     </BottomSheet>
   );

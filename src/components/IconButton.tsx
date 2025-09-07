@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import {
   StyleSheet,
-  UnistylesVariants, useUnistyles,
+  UnistylesVariants,
+  useUnistyles,
 } from 'react-native-unistyles';
 import { AnimatedIconToggle } from './AnimatedIconToggle';
 
@@ -32,7 +33,7 @@ export const IconButton = ({
   const { theme } = useUnistyles();
   styles.useVariants({
     rounded,
-  })
+  });
 
   const [toggled, setToggled] = useState(false);
   const handleTogglePressed = useCallback(
@@ -46,7 +47,7 @@ export const IconButton = ({
         onPress(e);
       }
     },
-    [onPress, props.disabled, toggled]
+    [onPress, props.disabled, toggled],
   );
 
   const themedIconProps = {

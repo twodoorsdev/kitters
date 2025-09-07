@@ -3,11 +3,17 @@ import { Text, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 export const NoImagesFound = () => {
-
   return (
-    <View style={styles.root} testID={`NoData<CatCard>`}>
+    <View
+      style={styles.root}
+      testID={`NoData<CatCard>`}
+    >
       <View style={styles.message}>
-        <FontAwesome name="warning" size={24} color="grey" />
+        <FontAwesome
+          name="warning"
+          size={24}
+          color="grey"
+        />
         <Text>No images found</Text>
       </View>
       {/*<Text>Imagine a vertical arrow pointing towards the + button</Text>*/}

@@ -12,5 +12,5 @@ export const getEnhancedImageList = createSelector(
       ...image,
       favourite: favourites.find((fav) => fav.image_id === image.id),
       votes: votes.filter((vote) => vote.image_id === image.id),
-    }))
+    })),
 );

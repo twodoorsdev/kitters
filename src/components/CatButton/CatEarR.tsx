@@ -2,7 +2,12 @@ import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 import { memo } from 'react';
 const SvgComponent = (props: SvgProps & { secondaryColor: string }) => (
-  <Svg width={116} height={149} fill="none" {...props}>
+  <Svg
+    width={116}
+    height={149}
+    fill="none"
+    {...props}
+  >
     <Path
       fill={props.color}
       d="M90.075 97.038c-9.53 51.779-26.273 48.698-40.45 46.089-14.178-2.609-45.09-22.487-36.926-50.55C20.862 64.512 88.633 9.017 88.633 9.017s10.971 36.241 1.442 88.02Z"

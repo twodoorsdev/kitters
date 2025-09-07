@@ -1,4 +1,8 @@
-import { proxyCatApiRequest, handleCatApiResponse, createErrorResponse } from '../../services/catapi/utils';
+import {
+  proxyCatApiRequest,
+  handleCatApiResponse,
+  createErrorResponse,
+} from '../../services/catapi/utils';
 
 export async function GET(request: Request): Promise<Response> {
   try {

@@ -1,4 +1,8 @@
-import { proxyCatApiRequest, handleCatApiResponse, createErrorResponse } from '../../services/catapi/utils';
+import {
+  proxyCatApiRequest,
+  handleCatApiResponse,
+  createErrorResponse,
+} from '../../services/catapi/utils';
 
 export async function GET(request: Request): Promise<Response> {
   try {
@@ -6,7 +10,9 @@ export async function GET(request: Request): Promise<Response> {
     const page = searchParams.get('page') ?? '0';
     const limit = searchParams.get('limit') ?? '10';
 
-    const response = await proxyCatApiRequest(`images?page=${page}&limit=${limit}`);
+    const response = await proxyCatApiRequest(
+      `images?page=${page}&limit=${limit}`,
+    );
     return handleCatApiResponse(response);
   } catch (error) {
     console.error('Error fetching images:', error);

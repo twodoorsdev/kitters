@@ -5,8 +5,8 @@ import { StyleSheet } from 'react-native-unistyles';
 import { Provider } from 'react-redux';
 // import { CustomToast } from '../components/CustomToast';
 import { store } from '../store/store';
-import { Slot } from "expo-router";
-import {StatusBar} from "expo-status-bar";
+import { Slot } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
 // const toastConfig = {
 //   success: CustomToast,

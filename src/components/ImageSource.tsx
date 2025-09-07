@@ -16,8 +16,14 @@ export const ImageSource = ({
   ...props
 }: ImageSourceProps) => {
   return (
-    <Pressable style={[styles.root, style as StyleProp<ViewStyle>]} {...props}>
-      <FontAwesome5 name={icon} size={32} />
+    <Pressable
+      style={[styles.root, style as StyleProp<ViewStyle>]}
+      {...props}
+    >
+      <FontAwesome5
+        name={icon}
+        size={32}
+      />
       {label && <Text>{label}</Text>}
     </Pressable>
   );

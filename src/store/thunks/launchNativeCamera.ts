@@ -11,5 +11,5 @@ export const launchNativeCamera = createAppAsyncThunk(
     return ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
     });
-  }
+  },
 );

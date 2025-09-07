@@ -33,31 +33,31 @@ export const CatButton = ({ animated, onPress }: CatButtonProps) => {
       withSequence(
         withDelay(
           2000 + Math.random() * 2000,
-          withSpring(-1 + Math.random() * 2)
+          withSpring(-1 + Math.random() * 2),
         ),
         withDelay(2000 + Math.random() * 3000, withSpring(0)),
         withDelay(
           2000 + Math.random() * 2000,
-          withSpring(-1 + Math.random() * 2)
+          withSpring(-1 + Math.random() * 2),
         ),
-        withDelay(2000 + Math.random() * 3000, withSpring(0))
+        withDelay(2000 + Math.random() * 3000, withSpring(0)),
       ),
-      0
+      0,
     );
     yVal.value = withRepeat(
       withSequence(
         withDelay(
           2000 + Math.random() * 3000,
-          withSpring(-1 + Math.random() * 2)
+          withSpring(-1 + Math.random() * 2),
         ),
         withDelay(2000 + Math.random() * 3000, withSpring(0)),
         withDelay(
           2000 + Math.random() * 3000,
-          withSpring(-1 + Math.random() * 2)
+          withSpring(-1 + Math.random() * 2),
         ),
-        withDelay(2000 + Math.random() * 3000, withSpring(0))
+        withDelay(2000 + Math.random() * 3000, withSpring(0)),
       ),
-      0
+      0,
     );
     blinkVal.value = withRepeat(
       withSequence(
@@ -68,9 +68,9 @@ export const CatButton = ({ animated, onPress }: CatButtonProps) => {
         withDelay(1000, withSpring(0.9)),
         withTiming(0, { duration: 50 }),
         withTiming(1, { duration: 100 }),
-        withDelay(2000, withSpring(0.8))
+        withDelay(2000, withSpring(0.8)),
       ),
-      0
+      0,
     );
   }, [blinkVal, xVal, yVal]);
 
@@ -82,7 +82,7 @@ export const CatButton = ({ animated, onPress }: CatButtonProps) => {
     blinkVal.value = withTiming(0.2);
     boopVal.value = withSequence(
       withTiming(1, { duration: 50 }),
-      withTiming(0, { duration: 50 })
+      withTiming(0, { duration: 50 }),
     );
 
     setTimeout(() => {
